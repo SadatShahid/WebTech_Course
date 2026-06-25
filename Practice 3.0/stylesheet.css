@@ -1,10 +1,45 @@
 .Button{
 	display: flex;
 	gap: 10px;
+	text-align: center;
+
 }
 
 fieldset{
 	width: 50%;
 	border-color: blueviolet;
 	border-radius: 10px;
+	padding-bottom: 50px;
+}
+
+.card{
+	width: 100%;
+}
+
+.table{
+	width: 100%;
+	margin: 15px 30px 15px 30px;
+}
+
+legend{
+	background-color: blueviolet;
+	border-radius: 10px;
+	padding: 10px;
+}
+.parent{
+	position: relative;
+}
+
+.button1{
+position: absolute;
+left: 30%;
+background-color: blueviolet;
+padding-bottom: 5px;
+border-radius: 6px;
+
+}
+
+.button2{
+position: absolute;
+left:50%;
 }
