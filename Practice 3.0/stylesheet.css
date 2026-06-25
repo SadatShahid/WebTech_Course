@@ -1,0 +1,10 @@
+.Button{
+	display: flex;
+	gap: 10px;
+}
+
+fieldset{
+	width: 50%;
+	border-color: blueviolet;
+	border-radius: 10px;
+}
