@@ -1,0 +1,450 @@
+/* --- Global Reset & Root Variables --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+}
+
+:root {
+    --primary-red: #cc0000;
+    --dark-red: #800000;
+    --deep-black: #111111;
+    --soft-charcoal: #1e1e1e;
+    --light-gray: #f4f4f4;
+    --white: #ffffff;
+    --card-red: #ED4C4C;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.logo img{
+    width: 5rem;
+    border-radius: 50%;
+}
+
+.logo {
+    display: inline-flex;
+
+}
+ .logo p {
+    margin-left: 10px;
+    margin-top: 15px;
+ }
+
+.hero-image-side img {
+    width: 100%;
+}
+
+.player-avatar img {
+    width: 95%;
+}
+
+
+
+body {
+    background-color: var(--white);
+    color: var(--deep-black);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 5rem 2rem;
+}
+
+.text-center { text-align: center; }
+.bg-dark-red { background-color: var(--dark-red); }
+.light-text { color: var(--white) !important; }
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--deep-black);
+}
+
+/* --- Header & Navbar Layout --- */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--deep-black);
+    padding: 1.2rem 3rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 4px solid var(--primary-red);
+}
+
+.navbar .logo {
+    color: var(--white);
+    font-size: 1.6rem;
+    font-weight: 900;
+    letter-spacing: 1px;
+}
+
+.navbar .logo-icon {
+    color: var(--primary-red);
+}
+
+.navbar nav ul {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.navbar nav ul li a {
+    color: var(--white);
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+.navbar nav ul li a:hover {
+    color: var(--primary-red);
+}
+
+/* --- Responsive Hero Section (Ref. Banner design) --- */
+.hero-container {
+    background-color: var(--primary-red);
+    color: var(--white);
+    overflow: hidden;
+    position: relative;
+    padding: 4rem 3rem 0 3rem;
+}
+
+.hero-layout {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    align-items: center;
+    gap: 2rem;
+}
+
+.hero-text-side {
+    padding-bottom: 4rem;
+}
+
+.hero-text-side .tag {
+    background-color: var(--deep-black);
+    color: var(--white);
+    padding: 0.3rem 0.8rem;
+    font-size: 0.8rem;
+    font-weight: bold;
+    display: inline-block;
+    margin-bottom: 1rem;
+}
+
+.hero-text-side .date {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    letter-spacing: 2px;
+}
+
+.hero-text-side h1 {
+    font-size: 4rem;
+    font-weight: 900;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+}
+
+.hero-desc {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+}
+
+.cta-btn {
+    display: inline-block;
+    padding: 0.8rem 2rem;
+    border: 2px solid var(--white);
+    color: var(--white);
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+}
+
+.cta-btn:hover {
+    background-color: var(--white);
+    color: var(--primary-red);
+}
+
+.hero-image-side {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    height: 100%;
+}
+
+.captain-img {
+    max-width: 100%;
+    max-height: 480px;
+    object-fit: cover;
+    display: block;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.captain-badge {
+    position: absolute;
+    bottom: 20px;
+    right: 0;
+    background-color: var(--deep-black);
+    color: var(--white);
+    padding: 0.8rem 1.5rem;
+    border-left: 5px solid var(--white);
+}
+
+/* --- Club and Stadium Styling --- */
+.stadium-card {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    background-color: var(--light-gray);
+    padding: 2rem;
+    border-radius: 8px;
+    border-left: 6px solid var(--primary-red);
+    margin-bottom: 4rem;
+}
+
+.stadium-icon {
+    font-size: 3.5rem;
+}
+
+.stadium-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+/* --- Squad System / Interactive Roster Cards --- */
+.squad-header {
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid var(--light-gray);
+    padding-bottom: 0.5rem;
+}
+
+.player-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.player-card {
+    background-color: var(--white);
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 1.5rem;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    transition: transform 0.2s, opacity 0.3s;
+}
+
+.player-card.fade-out {
+    opacity: 0;
+    transform: scale(0.9);
+}
+
+.player-avatar {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.player-card h4 {
+    font-size: 1.2rem;
+    margin-bottom: 0.2rem;
+}
+
+.player-card p {
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.release-btn {
+    background-color: transparent;
+    border: 1px solid var(--primary-red);
+    color: var(--primary-red);
+    padding: 0.4rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    font-weight: bold;
+    transition: all 0.2s ease;
+}
+
+.release-btn:hover {
+    background-color: var(--primary-red);
+    color: var(--white);
+}
+
+/* --- Control Management Panel Form --- */
+.management-panel {
+    background-color: var(--light-gray);
+    padding: 2rem;
+    border-radius: 8px;
+}
+
+.management-panel h4 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+}
+
+.player-form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.player-form input, .player-form select {
+    flex: 1;
+    min-width: 200px;
+    padding: 0.8rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.submit-btn {
+    background-color: var(--deep-black);
+    color: var(--white);
+    border: none;
+    padding: 0.8rem 2rem;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: background-color 0.2s;
+}
+
+.submit-btn:hover {
+    background-color: var(--primary-red);
+}
+
+/* --- Achievements Elements --- */
+.achievements-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 1rem;
+}
+
+.achievement-box {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 2.5rem 1.5rem;
+    border-radius: 6px;
+    border-top: 4px solid var(--white);
+    color: var(--white);
+}
+
+.trophy-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.achievement-box h3 {
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+}
+
+/* --- Contact Section --- */
+.contact-card {
+    background-color: var(--light-gray);
+    border-radius: 8px;
+    padding: 3rem;
+}
+
+.contact-details {
+    margin-top: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    font-size: 1.1rem;
+}
+
+/* --- Footer & Social Custom Rules --- */
+footer {
+    background-color: var(--deep-black);
+    color: var(--white);
+    padding: 3rem 2rem;
+    text-align: center;
+    border-top: 5px solid var(--primary-red);
+}
+
+.footer-content {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.challenge-msg {
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+    color: var(--white);
+}
+
+.fb-link {
+    display: inline-block;
+    color: var(--white);
+    font-size: 3.5rem;
+    transition: color 0.3s transform 0.2s;
+    margin-bottom: 1.5rem;
+}
+
+.fb-link:hover {
+    color: #1877f2; /* Custom official Facebook branding tone */
+    transform: scale(1.1);
+}
+
+.copyright {
+    font-size: 0.85rem;
+    opacity: 0.6;
+}
+
+/* --- Responsive Media Queries --- */
+@media (max-width: 900px) {
+    .hero-layout {
+        grid-template-columns: 1fr;
+        padding-bottom: 2rem;
+    }
+    .hero-text-side {
+        padding-bottom: 1rem;
+    }
+    .hero-text-side h1 {
+        font-size: 2.8rem;
+    }
+    .hero-image-side {
+        align-items: center;
+    }
+    .stadium-card {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+@media (max-width: 600px) {
+    .navbar {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem;
+    }
+    .navbar nav ul {
+        gap: 1rem;
+    }
+    .player-form {
+        flex-direction: column;
+    }
+}

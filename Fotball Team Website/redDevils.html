@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Red Devils FC | Official Website</title>
+    <link rel="stylesheet" href="stylesheet.css">
+    <!-- FontAwesome for the Facebook icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <header class="navbar">
+        <div class="logo">
+            <img src="logo.jpeg">
+            <p>RED DEVILS</p>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#club">Club & Squad</a></li>
+                <li><a href="#achievements">Achievements</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Showcase Section (Layout inspired by reference image) -->
+    <section id="hero" class="hero-container">
+        <div class="hero-layout">
+            <div class="hero-text-side">
+                <span class="tag">CAPTAIN SHOWCASE</span>
+                <span class="date">EST. 2024    </span>
+                <h1>THE NEW ERA OF THE DEVILS</h1>
+                <p class="hero-desc">
+                    Led by our fierce captain, the Red Devils are stepping onto the pitch with unyielding fire. 
+                    Built on discipline, fast-paced transitions, and the heavy atmosphere of our home turf.
+                </p>
+                <a href="#club" class="cta-btn">View Roster →</a>
+            </div>
+            
+            <!-- Captain Image Display Side -->
+            <div class="hero-image-side">
+                <!-- Replace the URL below with your actual captain's image link -->
+                <img src="captain.png" class="captain-img">
+                <div class="captain-badge">
+                    <h4>Tawhid Anower Apon</h4>
+                    <p>Number 10 • Attacking-Midfield</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Club & Roster Section -->
+    <section id="club" class="container">
+        <h2 class="section-title">Club Info & Squad Management</h2>
+        
+        <!-- Home Field Details Card -->
+        <div class="stadium-card">
+            <div class="stadium">
+                <img src="stadium.jpg">
+            </div>
+            <div>
+                <h3>Our Home Field: <strong>"90 Minutes"</strong></h3>
+                <p>A premium quality, high-performance <strong>Turf field</strong> engineered for intense tactical play, precision passing, and fast-paced team challenges.</p>
+            </div>
+        </div>
+
+        <!-- Squad Roster Grid -->
+        <div class="squad-header">
+            <h3>Active Player Roster</h3>
+            <p>Manage the lineup below by adding new recruits or releasing current players.</p>
+        </div>
+
+        <div class="player-grid" id="playerGrid">
+            <!-- Initial Player 1 -->
+            <div class="player-card" data-id="1">
+                <div class="player-avatar">
+                    <img src="captain.png">
+                </div>
+                <h4>Tawhid Anower Apon (C)</h4>
+                <p>Position: CF / AMF </p>
+            </div>
+            <!-- Initial Player 2 -->
+            <div class="player-card" data-id="2">
+                <div class="player-avatar">
+                    <img src="sadat.png">
+                </div>
+                <h4>Md Sadat Bin Shahid</h4>
+                <p>Position: AMF / CM </p>
+                <button class="release-btn" onclick="releasePlayer(2)">Release Player</button>
+            </div>
+        </div>
+
+        <!-- Squad Manager Action Panels -->
+        <div class="management-panel">
+            <h4>Recruit a New Player</h4>
+            <form id="addPlayerForm" class="player-form">
+                <input type="text" id="playerName" placeholder="Player's Full Name" required>
+                <select id="playerPosition" required>
+                    <option value="" disabled selected>Select Position</option>
+                    <option value="Goalkeeper">Goalkeeper</option>
+                    <option value="Defender">Defender</option>
+                    <option value="Midfielder">Midfielder</option>
+                    <option value="Forward">Forward</option>
+                </select>
+                <button type="submit" class="submit-btn">Add to Squad</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Achievements Section -->
+    <section id="achievements" class="bg-dark-red">
+        <div class="container text-center">
+            <h2 class="section-title light-text">Our Achievements</h2>
+            <div class="achievements-grid">
+                <div class="achievement-box">
+                    <div class="trophy-icon">🏆</div>
+                    <h3>League Champions</h3>
+                    <p>Winners of the Regional Premier Tournament</p>
+                </div>
+                <div class="achievement-box">
+                    <div class="trophy-icon">🥇</div>
+                    <h3>Champions Cup</h3>
+                    <p>Invincible run throughout the knockout stage</p>
+                </div>
+                <div class="achievement-box">
+                    <div class="trophy-icon">🔥</div>
+                    <h3>Fair Play Award</h3>
+                    <p>Recognized for exceptional conduct on the turf</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Information Section -->
+    <section id="contact" class="container">
+        <div class="contact-card text-center">
+            <h2 class="section-title">Contact Us</h2>
+            <p>Have questions, recruitment inquiries, or business propositions?</p>
+            <div class="contact-details">
+                <p><strong>📧 Email:</strong> contact@reddevilsfc.com</p>
+                <p><strong>📞 Phone:</strong> +1 (555) 90-MINUTES</p>
+                <p><strong>📍 HQ Office:</strong> Devil's Gate Arena, Suite 90</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer with Custom Social Action Challenge Callout -->
+    <footer>
+        <div class="footer-content">
+            <p class="challenge-msg">To play a challenge match with us ? Then Visit our page and send a text.</p>
+            <!-- Replace the href string with your actual Facebook page link -->
+            <a href="https://facebook.com/your-page-link" target="_blank" class="fb-link" aria-label="Facebook Page">
+                <i class="fab fa-facebook"></i>
+            </a>
+            <p class="copyright">&copy; 2026 Red Devils FC. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript to Dynamic Add/Release Players -->
+    <script>
+        let playerIdCounter = 3; // Starts at 3 because 1 and 2 are preloaded
+
+        // Add Player Logic
+        document.getElementById('addPlayerForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const nameInput = document.getElementById('playerName');
+            const positionInput = document.getElementById('playerPosition');
+            
+            const name = nameInput.value.trim();
+            const position = positionInput.value;
+            
+            if(name === "" || position === "") return;
+
+            // Generate customized emoji icon based on role
+            let avatar = '⚽';
+            if(position === 'Goalkeeper') avatar = '🧤';
+            if(position === 'Defender') avatar = '🛡️';
+
+            const grid = document.getElementById('playerGrid');
+            
+            // Create element card structural pattern
+            const card = document.createElement('div');
+            card.className = 'player-card';
+            card.setAttribute('data-id', playerIdCounter);
+            
+            card.innerHTML = `
+                <div class="player-avatar">${avatar}</div>
+                <h4>${name}</h4>
+                <p>Position: ${position}</p>
+                <button class="release-btn" onclick="releasePlayer(${playerIdCounter})">Release Player</button>
+            `;
+            
+            grid.appendChild(card);
+            
+            // Reset fields
+            nameInput.value = '';
+            positionInput.selectedIndex = 0;
+            playerIdCounter++;
+        });
+
+        // Release Player Logic
+        function releasePlayer(id) {
+            const cardToRemove = document.querySelector(`.player-card[data-id="${id}"]`);
+            if(cardToRemove) {
+                cardToRemove.classList.add('fade-out');
+                setTimeout(() => {
+                    cardToRemove.remove();
+                }, 300); // smooth animation matching UI styling delays
+            }
+        }
+    </script>
+</body>
+</html>
