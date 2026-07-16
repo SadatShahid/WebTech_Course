@@ -25,8 +25,9 @@
 
                     <tr>
                         <td>
-                            <label for="name">First Name :</label>
-                            <input type="text" name="name" id="firstName" placeholder="Enter your first name" required>
+                            <label for="firstName">First Name :</label>
+                            <input type="text" name="firstName" id="firstName" placeholder="Enter your first name" required>
+                            <span class="error-msg" id="firstNameError"></span>
                         </td>
                     </tr>
 
@@ -34,6 +35,7 @@
                         <td>
                             <label for="lastName">Last Name :</label>
                             <input type="text" name="lastName" id="lastName" placeholder="Enter your last name" required>
+                            <span class="error-msg" id="lastNameError"></span>
                         </td>
                     </tr>
 
@@ -41,6 +43,7 @@
                         <td>
                             <label for="studentId">Student ID :</label>
                             <input type="text" name="id" id="id" placeholder="Enter your student ID" required>
+                            <span class="error-msg" id="idError"></span>
                         </td>
                     </tr>
 
@@ -48,6 +51,7 @@
                         <td>
                             <label for="email">Email :</label>
                             <input type="email" name="email" id="email" placeholder="Enter your email" required>
+                            <span class="error-msg" id="emailError"></span>
                         </td>
                     </tr>
 
@@ -55,6 +59,7 @@
                         <td>
                             <label for="creditCompleted">Credit Completed :</label>
                             <input type="text" name="credit" id="credit" required>
+                            <span class="error-msg" id="creditError"></span>
                         </td>
                     </tr>
 
@@ -67,6 +72,7 @@
                                 <option value="FE">FE</option>
                                 <option value="FBA">FBA</option>
                             </select>
+                            <span class="error-msg" id="dptError"></span>
                         </td>
                     </tr>
                 </table>
@@ -75,7 +81,29 @@
         </section>
     </fieldset>
 
-    <script src="script.js"></script>
+    <fieldset class="list-fieldset">
+        <legend>Registered Student List</legend>
+        <div class="table-responsive">
+            <table class="student-list-table">
+                <thead>
+                    <tr>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Student ID</th>
+                        <th>Email</th>
+                        <th>Credits</th>
+                        <th>Department</th>
+                    </tr>
+                </thead>
+                <tbody id="studentListBody">
+                    <tr id="emptyRow">
+                        <td colspan="6" class="no-data">No students registered yet.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </fieldset>
 
+    <script src="script.js"></script>
 </body>
 </html>
