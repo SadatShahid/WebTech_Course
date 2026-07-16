@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registration Form</title>
+    <link rel="stylesheet" href="stylesheet.css">
+</head>
+<body>
+    <section class="header">
+        <h3>Student <span>Registration Form</span></h3>
+    </section>
+
+    <fieldset>
+        <legend>Student Registration</legend>
+
+        <section class="form">
+            <form class="registrationForm" novalidate>
+                <table>
+                    <tr class="head">
+                        <td>
+                            <p>Provide your all information correctly to register</p>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <label for="name">First Name :</label>
+                            <input type="text" name="name" id="name" placeholder="Enter your first name" required>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <label for="lastName">Last Name :</label>
+                            <input type="text" name="lastName" id="lastName" placeholder="Enter your last name" required>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <label for="studentId">Student ID :</label>
+                            <input type="text" name="id" id="id" placeholder="Enter your student ID" required>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <label for="email">Email :</label>
+                            <input type="email" name="email" id="email" placeholder="Enter your email" required>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <label for="creditCompleted">Credit Completed :</label>
+                            <input type="text" name="credit" id="credit" required>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <label for="dpt">Department :</label>
+                            <select name="dpt" id="dpt">
+                                <option value="">Please select a department</option>
+                                <option value="FST">FST</option>
+                                <option value="FE">FE</option>
+                                <option value="FBA">FBA</option>
+                            </select>
+                        </td>
+                    </tr>
+                </table>
+                <button type="submit" class="submitBtn">Submit</button>
+            </form>
+        </section>
+    </fieldset>
+
+    <!-- <script src="script.js"></script> -->
+
+    <script>
+        ('DOMContentLoaded', function() {
+        const form =document.getElementById('registrationForm');
+
+        form.addEventListener("submit",function(event){
+            event.preventDefault();
+
+            //geting form inputs
+            const firstName = document.getElementById('firstName').value;
+            const lastName = document.getElementById('lastName').value;
+            const studentId = document.getElementById('studentId').value;
+            const email = document.getElementById('email').value;
+            const credit = document.getElementById('credit').value;
+            const department = document.getElementById('dpt').value;
+            
+            //Validation Check
+            if (firstName === ""){
+                alert("First Name is required.");
+                return;
+            }
+
+            if (lastName === ""){
+                alert("Last Name is required.");
+                return;
+            }
+
+            if(!studentId.includes("-")){
+                alert("Student ID must follow (XX-XXXXX-X) format.");
+                return;
+            }
+
+            if(!email.endsWith("@student.aiub.edu")){
+                alert("Email must be a valid student email, provided by the university.");
+                return;
+            }
+
+            const creditNum = Number(credit);
+            if (credit ==="" || isNaN(creditNum) || creditNum < 0 || creditNum >= 148){
+                alert("Credit Completed must be 0 or more, but less than 148.");
+                return;
+            }
+
+            if (department === ""){
+                alert("Please Select a Department where you belong.");
+                return;
+            }
+
+            alert("Registration Successful!");
+            form.submit;
+
+        })
+    }
+    </script>
+</body>
+</html>
