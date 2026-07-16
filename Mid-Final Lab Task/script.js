@@ -2,7 +2,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const form = document.getElementById('registrationForm');
     const studentListBody = document.getElementById('studentListBody');
 
-    // Array to hold registered student objects
     let registeredStudents = [];
 
     if (!form) {
@@ -11,9 +10,8 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     form.addEventListener("submit", function(event){
-        event.preventDefault(); // Prevents default browser reload
+        event.preventDefault(); 
 
-        // 1. Fetch form inputs
         const firstNameInput = document.getElementById('firstName');
         const lastNameInput = document.getElementById('lastName');
         const studentIdInput = document.getElementById('id');
@@ -21,7 +19,6 @@ document.addEventListener('DOMContentLoaded', function() {
         const creditInput = document.getElementById('credit');
         const departmentSelect = document.getElementById('dpt');
 
-        // Extract trimmed values
         const firstName = firstNameInput.value.trim();
         const lastName = lastNameInput.value.trim();
         const studentId = studentIdInput.value.trim();
@@ -29,7 +26,6 @@ document.addEventListener('DOMContentLoaded', function() {
         const credit = creditInput.value.trim();
         const department = departmentSelect.value;
 
-        // 2. Reset errors and red input borders
         const errorLabels = document.querySelectorAll('.error-msg');
         errorLabels.forEach(label => label.textContent = "");
 
@@ -38,7 +34,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
         let isValid = true;
 
-        // 3. Validation Logic (Label Tracking)
         if (firstName === "") {
             document.getElementById('firstNameError').textContent = "First Name is required.";
             firstNameInput.classList.add('invalid-input');
@@ -76,7 +71,6 @@ document.addEventListener('DOMContentLoaded', function() {
             isValid = false;
         }
 
-        // 4. Update the student list table on success
         if (isValid) {
             const studentObj = {
                 firstName: firstName,
@@ -89,11 +83,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
             registeredStudents.push(studentObj);
             updateStudentTable();
-            form.reset(); // clear form inputs
+            form.reset(); 
         }
     });
 
-    // Renders the student table
     function updateStudentTable() {
         studentListBody.innerHTML = "";
 
