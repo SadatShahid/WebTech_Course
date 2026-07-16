@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
         //geting form inputs
         const firstName = document.getElementById('firstName').value;
         const lastName = document.getElementById('lastName').value;
-        const studentId = document.getElementById('studentId').value;
+        const studentId = document.getElementById('id').value;
         const email = document.getElementById('email').value;
         const credit = document.getElementById('credit').value;
         const department = document.getElementById('dpt').value;
@@ -48,4 +48,4 @@ document.addEventListener('DOMContentLoaded', function() {
         form.submit;
 
     })
-}
+})
